@@ -6,8 +6,11 @@
 <input type="submit" value="Apply" />
 </form>
 
-<h3>Standard skills</h3>
-<table><tr>
+<div id="toggle_standard_skills" style="cursor: pointer;">
+    <h3 style="display: inline;">Standard skills</h3>
+    <span style="font-size:9px">Click to show/hide</span>
+</div>
+<table id="standard_skills_table"><tr>
 {% for skill in et.standard_skills %}
         <td>{{ skill.name }}</td>
         <td valign="top">
@@ -19,8 +22,11 @@
 </tr></table>
 
 {% if et.magic_skills %}
-<h3>Magic skills</h3>
-<table><tr>
+<div id="toggle_magic_skills" style="cursor: pointer;">
+    <h3 style="display: inline;">Magic skills</h3>
+    <span style="font-size:9px">Click to show/hide</span>
+</div>
+<table id="magic_skills_table"><tr>
 {% for skill in et.magic_skills %}
         <td>{{ skill.name }}</td>
         <td valign="top">

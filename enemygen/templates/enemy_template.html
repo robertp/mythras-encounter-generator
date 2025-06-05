@@ -69,6 +69,22 @@ $(document).ready(function(){
     $('#professional_skills_table').toggle();
   });
 
+  $('#toggle_enemy_details').click(function(event){
+    $('#enemy_details_container').toggle();
+  });
+
+  $('#toggle_weapon_options').click(function(event){
+    $('#weapon_options_container').toggle();
+  });
+
+  $('#toggle_standard_skills').click(function(event){
+    $('#standard_skills_table').toggle();
+  });
+
+  $('#toggle_magic_skills').click(function(event){
+    $('#magic_skills_table').toggle();
+  });
+
   $('#folk_spells_header').click(function(event){
     $('#folk_spells_container_inner').toggle();
   });
@@ -113,16 +129,20 @@ $(document).ready(function(){
     </div>
 </div>
 
-<h3 style="display: inline;">
-    Enemy details
-    {% if et.starred %}
-        <img et_id={{ et.id }} class="star" height="22" width="22" src="/static/images/star_filled.png" />
-    {% else %}
-        <img et_id={{ et.id }} class="star" height="22" width="22" src="/static/images/star_empty.png" />
-    {% endif %}
-</h3>
+<div id="toggle_enemy_details" style="cursor: pointer;">
+    <h3 style="display: inline;">
+        Enemy details
+        {% if et.starred %}
+            <img et_id={{ et.id }} class="star" height="22" width="22" src="/static/images/star_filled.png" />
+        {% else %}
+            <img et_id={{ et.id }} class="star" height="22" width="22" src="/static/images/star_empty.png" />
+        {% endif %}
+    </h3>
+    <span style="font-size:9px">Click to show/hide</span>
+</div>
 <span class="generated_amount">(Generated {{ et.generated }} times)</span>
 
+<div id="enemy_details_container">
 <table><tr>
     <th>Template name</th>
     <td><input id="et_{{ et.id }}" class="data" type="text" size="40" item_id="{{ et.id }}" item_type="et_name" value="{{ et.name }}" /></td>
@@ -236,6 +256,7 @@ $(document).ready(function(){
 </tr>
 </table>
 </td></tr></table>
+</div>
 
 {% include 'enemy_template_cults.html' %}
 

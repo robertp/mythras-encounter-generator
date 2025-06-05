@@ -4,3 +4,5 @@ mythras_eg/settings.py
 temp/
 .vscode
 dump.sql
+.python-version
+meg.sql
